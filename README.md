@@ -29,9 +29,11 @@ The analysis proceeds in three stages:
 ## Project Structure
 
 ```         
-├── computational_vexillology.qmd   # Full analysis (single document, ~3700 lines)
+├── index.qmd                       # Full analysis (single document, ~3700 lines)
 ├── nootebook.qmd                   # Part I: Feature extraction (standalone)
 ├── analysis.qmd                    # Part II: Distance, clustering, hypotheses (standalone)
+├── index.html                      # Main report in HTML
+├── index_files/                    # Dependences for the HTML                
 ├── data/
     ├── flag_features.csv           # 250 × 21 feature matrix (code, name, 19 features)
     ├── country_metadata.csv        # REST Countries API data (250 rows)
@@ -40,7 +42,7 @@ The analysis proceeds in three stages:
     └── flags/                      # 250 PNG rasterized flags (not in repo)
 ```
 
-The three `.qmd` files are [Quarto](https://quarto.org) documents that combine prose, code, and interactive Plotly visualizations. `computational_vexillology.qmd` is the complete analysis in a single document; `nootebook.qmd` and `analysis.qmd` are the original two-part versions.
+The three `.qmd` files are [Quarto](https://quarto.org) documents that combine prose, code, and interactive Plotly visualizations. `index.qmd` is the complete analysis in a single document; `nootebook.qmd` and `analysis.qmd` are the original two-part versions.
 
 ## Reproducibility
 
@@ -60,7 +62,7 @@ statsmodels umap-learn hdbscan torch torchvision itables requests
 
 ``` bash
 # Render the full analysis to HTML
-quarto render computational_vexillology.qmd
+quarto render index.qmd
 
 # Or render the two parts separately
 quarto render nootebook.qmd
